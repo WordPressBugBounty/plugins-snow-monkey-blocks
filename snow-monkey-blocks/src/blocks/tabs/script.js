@@ -58,11 +58,47 @@ const apply = ( tab ) => {
 	);
 };
 
+const openTabWithHash = ( hash ) => {
+	if ( hash?.match( /^#smb-tab-for-/ ) ) {
+		const tab = document.querySelector( `${ hash } .smb-tabs__tab` );
+		if ( !! tab ) {
+			if ( 'false' === tab.getAttribute( 'aria-selected' ) ) {
+				tab.click();
+			}
+		}
+	}
+};
+
+const applyOpenTabHashNav = ( link ) => {
+	link.addEventListener(
+		'click',
+		( event ) => {
+			const targetURL = event.target.href.replace(
+				event.target.hash,
+				''
+			);
+
+			if ( window.location.href.includes( targetURL ) ) {
+				event.preventDefault();
+				openTabWithHash( event.target.hash );
+			}
+		},
+		false
+	);
+};
+
 document.addEventListener(
 	'DOMContentLoaded',
 	() => {
 		const tabs = document.querySelectorAll( '.smb-tabs__tab' );
 		forEachHtmlNodes( tabs, apply );
+
+		openTabWithHash( window.location.hash );
+
+		const tabLinks = document.querySelectorAll(
+			'a[href*="#smb-tab-for-"]'
+		);
+		forEachHtmlNodes( tabLinks, applyOpenTabHashNav );
 	},
 	false
 );
