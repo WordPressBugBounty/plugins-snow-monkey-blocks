@@ -54,6 +54,7 @@
 	&__action {
 		display: flex;
 		justify-content: space-between;
+		margin-top: 16px;
 
 		.components-button {
 			flex: 0 0 auto;
@@ -61,6 +62,10 @@
 	}
 
 	.components-datetime {
+		.components-heading {
+			margin-bottom: 0;
+		}
+
 		.components-datetime__date-help-button {
 			display: none;
 		}
@@ -96,45 +101,26 @@
 	position: relative;
 	padding: 0;
 
-	.block-editor-link-control {
-		min-width: auto;
+	.block-editor-link-control,
+	.block-editor-link-control__search-input {
+		min-width: auto !important;
+	}
 
-		&__search-results-wrapper {
-			margin-top: 0;
-		}
+	.block-editor-link-control__field {
+		margin: 0 !important;
+	}
 
-		.block-editor-url-input {
-			margin: 0 !important;
-		}
+	.block-editor-link-control__search-actions {
+		padding: 0;
+	}
 
-		.block-editor-link-control__search-actions {
-			display: none !important;
-		}
+	.block-editor-link-control__search-results {
+		margin-top: 8px;
+		padding: 0;
+	}
 
-		.block-editor-link-control__search-item.is-current {
-			padding: 0;
-
-			& + .block-editor-link-control__search-item-action {
-				margin: 0 0 0 1rem;
-			}
-		}
-
-		.is-url {
-			display: none !important;
-		}
-
-		.block-editor-link-control__search-enter {
-			right: 0;
-		}
-
-		.block-editor-link-control__search-results {
-			margin-top: 8px;
-			padding: 0;
-		}
-
-		.components-button.has-icon.has-text {
-			padding: 4px 0;
-		}
+	.block-editor-link-control__search-item {
+		padding: 4px 0 !important;
 	}
 }
 
@@ -196,5 +182,14 @@
 
 	.components-border-control {
 		margin-right: 0 !important;
+	}
+}
+
+.smb-toggle-group-control {
+	&__body {
+		border: 1px solid #949494;
+		border-radius: 0 0 2px 2px;
+		border-top: none;
+		padding: 16px 8px !important;
 	}
 }

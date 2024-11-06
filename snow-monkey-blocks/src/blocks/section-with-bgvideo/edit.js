@@ -176,7 +176,7 @@ export default function ( {
 		{
 			templateLock,
 			renderAppender: hasInnerBlocks
-				? InnerBlocks.DefaultBlockAppender
+				? undefined
 				: InnerBlocks.ButtonBlockAppender,
 		}
 	);
@@ -291,6 +291,7 @@ export default function ( {
 						}
 					>
 						<TextControl
+							__nextHasNoMarginBottom
 							label={ __( 'YouTube URL', 'snow-monkey-blocks' ) }
 							value={ videoURL }
 							onChange={ ( value ) =>

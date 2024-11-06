@@ -66,7 +66,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 			allowedBlocks: ALLOWED_BLOCKS,
 			templateLock,
 			renderAppender: hasInnerBlocks
-				? InnerBlocks.DefaultBlockAppender
+				? undefined
 				: InnerBlocks.ButtonBlockAppender,
 		}
 	);
@@ -143,6 +143,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 						}
 					>
 						<BaseControl
+							__nextHasNoMarginBottom
 							label={ __( 'Icon', 'snow-monkey-blocks' ) }
 							id="snow-monkey-blocks/directory-structure-item-directory/icon"
 						>

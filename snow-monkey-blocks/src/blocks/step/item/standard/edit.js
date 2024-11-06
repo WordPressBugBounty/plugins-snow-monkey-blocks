@@ -121,7 +121,7 @@ export default function ( {
 		{
 			templateLock,
 			renderAppender: hasInnerBlocks
-				? InnerBlocks.DefaultBlockAppender
+				? undefined
 				: InnerBlocks.ButtonBlockAppender,
 		}
 	);
@@ -181,6 +181,7 @@ export default function ( {
 						}
 					>
 						<SelectControl
+							__nextHasNoMarginBottom
 							label={ __(
 								'Image position',
 								'snow-monkey-blocks'

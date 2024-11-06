@@ -1,17 +1,17 @@
 import { indexOf } from 'lodash';
 
 import {
-	Flex,
-	ToggleControl,
-	__experimentalToolsPanel as ToolsPanel,
-	__experimentalToolsPanelItem as ToolsPanelItem,
-} from '@wordpress/components';
-
-import {
 	InspectorControls,
 	useBlockProps,
 	RichText,
 } from '@wordpress/block-editor';
+
+import {
+	ToggleControl,
+	__experimentalToolsPanel as ToolsPanel,
+	__experimentalToolsPanelItem as ToolsPanelItem,
+	__experimentalVStack as VStack,
+} from '@wordpress/components';
 
 import { __ } from '@wordpress/i18n';
 
@@ -60,8 +60,9 @@ export default function ( { attributes, setAttributes } ) {
 							} )
 						}
 					>
-						<Flex direction="column">
+						<VStack spacing="16px">
 							<ToggleControl
+								__nextHasNoMarginBottom
 								name="headings[]"
 								value="h2"
 								label={ __( 'Show h2', 'snow-monkey-blocks' ) }
@@ -80,6 +81,7 @@ export default function ( { attributes, setAttributes } ) {
 							/>
 
 							<ToggleControl
+								__nextHasNoMarginBottom
 								name="headings[]"
 								value="h3"
 								label={ __( 'Show h3', 'snow-monkey-blocks' ) }
@@ -98,6 +100,7 @@ export default function ( { attributes, setAttributes } ) {
 							/>
 
 							<ToggleControl
+								__nextHasNoMarginBottom
 								name="headings[]"
 								value="h4"
 								label={ __( 'Show h4', 'snow-monkey-blocks' ) }
@@ -114,7 +117,7 @@ export default function ( { attributes, setAttributes } ) {
 									} )
 								}
 							/>
-						</Flex>
+						</VStack>
 					</ToolsPanelItem>
 
 					<ToolsPanelItem
@@ -136,6 +139,7 @@ export default function ( { attributes, setAttributes } ) {
 						}
 					>
 						<ToggleControl
+							__nextHasNoMarginBottom
 							value={ true }
 							label={ __(
 								'Show section block titles',
@@ -169,6 +173,7 @@ export default function ( { attributes, setAttributes } ) {
 						}
 					>
 						<ToggleControl
+							__nextHasNoMarginBottom
 							value={ true }
 							label={ __(
 								'Show heading blocks in section blocks',
@@ -202,6 +207,7 @@ export default function ( { attributes, setAttributes } ) {
 						}
 					>
 						<ToggleControl
+							__nextHasNoMarginBottom
 							label={ __(
 								'Move to before 1st heading',
 								'snow-monkey-blocks'

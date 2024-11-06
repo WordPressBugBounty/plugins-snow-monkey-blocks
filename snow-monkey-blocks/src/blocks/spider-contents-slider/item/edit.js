@@ -127,7 +127,7 @@ export default function ( {
 		{
 			templateLock,
 			renderAppender: hasInnerBlocks
-				? InnerBlocks.DefaultBlockAppender
+				? undefined
 				: InnerBlocks.ButtonBlockAppender,
 		}
 	);
@@ -235,6 +235,7 @@ export default function ( {
 					panelId={ clientId }
 				>
 					<SelectControl
+						__nextHasNoMarginBottom
 						label={ __( 'Padding', 'snow-monkey-blocks' ) }
 						value={ contentPadding }
 						options={ [

@@ -207,7 +207,7 @@ export default function ( {
 		{
 			templateLock,
 			renderAppender: hasInnerBlocks
-				? InnerBlocks.DefaultBlockAppender
+				? undefined
 				: InnerBlocks.ButtonBlockAppender,
 		}
 	);
@@ -227,6 +227,7 @@ export default function ( {
 					panelId={ clientId }
 				>
 					<SelectControl
+						__nextHasNoMarginBottom
 						label={ __( 'Gap', 'snow-monkey-blocks' ) }
 						value={ gap }
 						onChange={ ( value ) =>
@@ -361,6 +362,7 @@ export default function ( {
 						}
 					>
 						<SelectControl
+							__nextHasNoMarginBottom
 							label={ __(
 								'Heading column size',
 								'snow-monkey-blocks'
@@ -407,6 +409,7 @@ export default function ( {
 						}
 					>
 						<SelectControl
+							__nextHasNoMarginBottom
 							label={ __(
 								'Content column size',
 								'snow-monkey-blocks'
