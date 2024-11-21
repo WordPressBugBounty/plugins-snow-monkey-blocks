@@ -341,10 +341,7 @@ export default function ( {
 							blur !== metadata.attributes.blur.default
 						}
 						isShownByDefault
-						label={ __(
-							'Image aspect ratio',
-							'snow-monkey-blocks'
-						) }
+						label={ __( 'Shade off', 'snow-monkey-blocks' ) }
 						onDeselect={ () =>
 							setAttributes( {
 								blur: metadata.attributes.blur.default,
@@ -405,6 +402,7 @@ export default function ( {
 						}
 					>
 						<RangeControl
+							__nextHasNoMarginBottom
 							label={ __( 'Opacity', 'snow-monkey-blocks' ) }
 							value={ Number( ( 1 - maskOpacity ).toFixed( 1 ) ) }
 							onChange={ ( value ) =>
