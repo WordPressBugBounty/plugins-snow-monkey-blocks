@@ -31,7 +31,12 @@ import ResponsiveTabPanel from '@smb/component/responsive-tab-panel';
 import Figure from '@smb/component/figure';
 import ResolutionTool from '@smb/component/resolution-tool';
 
-import { toNumber, getMediaType, isVideoType } from '@smb/helper';
+import {
+	toNumber,
+	getMediaType,
+	isVideoType,
+	cleanEmptyObject,
+} from '@smb/helper';
 
 import { PanelBasicSettings } from '../section/components/basic';
 import { Edit as Header } from '../section/components/header';
@@ -1177,12 +1182,31 @@ export default function ( {
 						{
 							positionValue: backgroundText.position,
 							onPositionChange: ( value ) => {
-								newBackgroundText.position = value;
+								newBackgroundText.position.top =
+									null != value?.top &&
+									value?.top.match( /^\d+$/ )
+										? `${ value?.top }px`
+										: value?.top;
+								newBackgroundText.position.right =
+									null != value?.right &&
+									value?.right.match( /^\d+$/ )
+										? `${ value?.right }px`
+										: value?.right;
+								newBackgroundText.position.bottom =
+									null != value?.bottom &&
+									value?.bottom.match( /^\d+$/ )
+										? `${ value?.bottom }px`
+										: value?.bottom;
+								newBackgroundText.position.left =
+									null != value?.left &&
+									value?.left.match( /^\d+$/ )
+										? `${ value?.left }px`
+										: value?.left;
 
 								setAttributes( {
-									backgroundText: {
+									backgroundText: cleanEmptyObject( {
 										...newBackgroundText,
-									},
+									} ),
 								} );
 							},
 							defaultValue:
