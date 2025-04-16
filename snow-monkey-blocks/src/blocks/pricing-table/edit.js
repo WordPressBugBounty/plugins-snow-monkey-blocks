@@ -28,19 +28,14 @@ import metadata from './block.json';
 export default function ( { attributes, setAttributes, className, clientId } ) {
 	const { columnSize, childrenCount, templateLock } = attributes;
 
-	const hasInnerBlocks = useSelect(
-		( select ) =>
-			!! select( 'core/block-editor' ).getBlock( clientId )?.innerBlocks
-				?.length,
-		[ clientId ]
-	);
-
 	const innerBlocksCount = useSelect(
 		( select ) =>
 			select( 'core/block-editor' ).getBlock( clientId )?.innerBlocks
 				?.length,
 		[ clientId ]
 	);
+
+	const hasInnerBlocks = 0 < innerBlocksCount;
 
 	useEffect( () => {
 		if ( !! innerBlocksCount ) {
@@ -99,6 +94,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 						}
 					>
 						<SelectControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __( 'Column size', 'snow-monkey-blocks' ) }
 							help={ __(

@@ -15,8 +15,8 @@ import {
 	InspectorControls,
 	RichText,
 	useBlockProps,
+	LinkControl,
 	__experimentalPanelColorGradientSettings as PanelColorGradientSettings,
-	__experimentalLinkControl as LinkControl,
 	__experimentalBorderRadiusControl as BorderRadiusControl,
 	__experimentalGetSpacingClassesAndStyles as useSpacingProps,
 } from '@wordpress/block-editor';
@@ -129,6 +129,7 @@ export default function ( {
 						}
 					>
 						<SelectControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __( 'Button size', 'snow-monkey-blocks' ) }
 							value={ modifier }

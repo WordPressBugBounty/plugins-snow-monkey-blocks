@@ -1,6 +1,6 @@
 import {
+	BoxControl,
 	__experimentalUseCustomUnits as useCustomUnits,
-	__experimentalBoxControl as BoxControl,
 } from '@wordpress/components';
 
 import {
@@ -28,6 +28,7 @@ export default function ( props ) {
 
 	return (
 		<BoxControl
+			__next40pxDefaultSize
 			values={ values }
 			onChange={ onChange }
 			label={ label }

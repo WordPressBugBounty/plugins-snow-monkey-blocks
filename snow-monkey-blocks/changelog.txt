@@ -1,5 +1,9 @@
 *** Changelog ***
 
+= 24.0.0 =
+* WordPress 6.8 compatible.
+* Requires WordPress 6.8 or higher.
+
 = 23.1.4 =
 * [Section] Fixed an issue where background text position settings were reflected in other blocks of the same block type.
 * [Section (Break the grid)] Fixed an issue where background text position settings were reflected in other blocks of the same block type.

@@ -137,21 +137,17 @@ export default function ( {
 		[ clientId ]
 	);
 
-	const { imageSizes, image } = useSelect(
-		( select ) => {
-			const { getSettings } = select( 'core/block-editor' );
-			return {
-				image:
-					imageID && isSelected
-						? select( 'core' ).getMedia( imageID, {
-								context: 'view',
-						  } )
-						: null,
-				imageSizes: getSettings()?.imageSizes,
-			};
-		},
+	const imageSizes = useSelect(
+		( select ) => select( 'core/block-editor' ).getSettings()?.imageSizes,
+		[]
+	);
 
-		[ isSelected, imageID, clientId ]
+	const image = useSelect(
+		( select ) =>
+			imageID
+				? select( 'core' ).getMedia( imageID, { context: 'view' } )
+				: null,
+		[ imageID ]
 	);
 
 	const imageSizeOptions = imageSizes
@@ -483,6 +479,7 @@ export default function ( {
 							}
 						>
 							<SelectControl
+								__next40pxDefaultSize
 								__nextHasNoMarginBottom
 								label={ __(
 									'Sort by mobile',
@@ -546,6 +543,7 @@ export default function ( {
 						}
 					>
 						<SelectControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Image Size Adjustment',
@@ -663,6 +661,7 @@ export default function ( {
 						}
 					>
 						<SelectControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Content size adjustment',
@@ -698,6 +697,7 @@ export default function ( {
 						}
 					>
 						<SelectControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Degree of overlap of content to image',
@@ -774,6 +774,7 @@ export default function ( {
 								}
 							>
 								<SelectControl
+									__next40pxDefaultSize
 									__nextHasNoMarginBottom
 									label={ __(
 										'Vertical position of content',
@@ -954,6 +955,7 @@ export default function ( {
 							}
 						>
 							<RangeControl
+								__next40pxDefaultSize
 								__nextHasNoMarginBottom
 								label={ __(
 									'Background opacity',
@@ -989,6 +991,7 @@ export default function ( {
 						}
 					>
 						<SelectControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __( 'Padding', 'snow-monkey-blocks' ) }
 							value={ contentPadding }
@@ -1138,6 +1141,7 @@ export default function ( {
 							}
 						>
 							<RangeControl
+								__next40pxDefaultSize
 								__nextHasNoMarginBottom
 								label={ __( 'Opacity', 'snow-monkey-blocks' ) }
 								value={ Number(

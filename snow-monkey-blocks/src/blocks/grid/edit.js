@@ -40,11 +40,9 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 	} = attributes;
 
 	const hasInnerBlocks = useSelect(
-		( select ) => {
-			const { getBlock } = select( 'core/block-editor' );
-			const block = getBlock( clientId );
-			return !! ( block && block.innerBlocks.length );
-		},
+		( select ) =>
+			!! select( 'core/block-editor' ).getBlock( clientId )?.innerBlocks
+				?.length,
 		[ clientId ]
 	);
 
@@ -123,6 +121,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 							id="snow-monkey-blocks/grid/grid-template-columns"
 						>
 							<ToggleGroupControl
+								__next40pxDefaultSize
 								__nextHasNoMarginBottom
 								hideLabelFromVision
 								value={ columnsOption }
@@ -173,6 +172,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 							>
 								{ 'columns' === columnsOption && (
 									<RangeControl
+										__next40pxDefaultSize
 										__nextHasNoMarginBottom
 										label={ __(
 											'Columns count',
@@ -193,6 +193,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 								{ 'min' === columnsOption && (
 									<>
 										<UnitControl
+											__next40pxDefaultSize
 											label={ __(
 												'Minimum width',
 												'snow-monkey-blocks'
@@ -206,6 +207,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 										/>
 
 										<ToggleGroupControl
+											__next40pxDefaultSize
 											__nextHasNoMarginBottom
 											label={ __(
 												'Auto repeat',
@@ -233,6 +235,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 
 								{ 'free' === columnsOption && (
 									<TextControl
+										__next40pxDefaultSize
 										__nextHasNoMarginBottom
 										value={ gridTemplateColumns }
 										onChange={ ( value ) =>
@@ -271,6 +274,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 							id="snow-monkey-blocks/grid/grid-template-rows"
 						>
 							<ToggleGroupControl
+								__next40pxDefaultSize
 								__nextHasNoMarginBottom
 								hideLabelFromVision
 								value={ rowsOption }
@@ -307,6 +311,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 							>
 								{ 'rows' === rowsOption && (
 									<RangeControl
+										__next40pxDefaultSize
 										__nextHasNoMarginBottom
 										label={ __(
 											'Rows count',
@@ -326,6 +331,7 @@ export default function ( { attributes, setAttributes, className, clientId } ) {
 
 								{ 'free' === rowsOption && (
 									<TextControl
+										__next40pxDefaultSize
 										__nextHasNoMarginBottom
 										value={ gridTemplateRows }
 										onChange={ ( value ) =>

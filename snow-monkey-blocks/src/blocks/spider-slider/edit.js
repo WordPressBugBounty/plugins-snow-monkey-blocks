@@ -26,6 +26,7 @@ import useImageSizes from './use-image-sizes';
 
 const ALLOWED_TYPES = [ 'image' ];
 const DEFAULT_MEDIA_SIZE_SLUG = 'full';
+const EMPTY_ARRAY = [];
 
 import metadata from './block.json';
 
@@ -59,27 +60,31 @@ export default function ( {
 	const hasImages = !! images.length;
 
 	const { getSettings } = useSelect( ( select ) => {
+		const { getSettings: _getSettings } = select( 'core/block-editor' );
 		return {
-			getSettings: select( 'core/block-editor' ).getSettings,
+			getSettings: _getSettings,
 		};
 	}, [] );
 
-	const { resizedImages } = useSelect(
+	const resizedImages = useSelect(
 		( select ) => {
-			return {
-				resizedImages: images
-					.map( ( image ) => {
-						return image.id && isSelected
-							? select( 'core' ).getMedia( image.id, {
-									context: 'view',
-							  } )
-							: null;
-					} )
-					.filter( Boolean ),
-			};
-		},
+			const imageIds = images
+				.map( ( image ) => image.id )
+				.filter( ( id ) => id !== undefined );
 
-		[ isSelected, images, clientId ]
+			if ( imageIds.length === 0 ) {
+				return EMPTY_ARRAY;
+			}
+
+			return (
+				select( 'core' ).getMediaItems( {
+					include: imageIds.join( ',' ),
+					per_page: -1,
+					orderby: 'include',
+				} ) ?? EMPTY_ARRAY
+			);
+		},
+		[ images ]
 	);
 
 	const isAlignwide = 'wide' === attributes.align;
@@ -184,7 +189,7 @@ export default function ( {
 			} }
 			onSelect={ ( selectedImages ) => {
 				const newImages = selectedImages.map( ( image ) => {
-					if ( ! image.id ) {
+					if ( ! image?.id ) {
 						return image;
 					}
 
@@ -233,6 +238,7 @@ export default function ( {
 					panelId={ clientId }
 				>
 					<SelectControl
+						__next40pxDefaultSize
 						__nextHasNoMarginBottom
 						label={ __( 'Gap', 'snow-monkey-blocks' ) }
 						value={ gutter }
@@ -263,6 +269,7 @@ export default function ( {
 						}
 					>
 						<SelectControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __( 'Images size', 'snow-monkey-blocks' ) }
 							value={ sizeSlug }
@@ -270,7 +277,7 @@ export default function ( {
 							onChange={ ( value ) => {
 								const newImages = resizedImages.map(
 									( image ) => {
-										if ( ! image.id ) {
+										if ( ! image?.id ) {
 											return image;
 										}
 
@@ -328,6 +335,7 @@ export default function ( {
 						}
 					>
 						<SelectControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __( 'Aspect ratio', 'snow-monkey-blocks' ) }
 							value={ aspectRatio }
@@ -570,6 +578,7 @@ export default function ( {
 						}
 					>
 						<RangeControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Autoplay Speed in seconds',
@@ -641,6 +650,7 @@ export default function ( {
 						}
 					>
 						<RangeControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Animation speed in seconds',
@@ -696,6 +706,7 @@ export default function ( {
 							<ResponsiveTabPanel
 								desktop={ () => (
 									<RangeControl
+										__next40pxDefaultSize
 										__nextHasNoMarginBottom
 										label={ __(
 											'# of slides to show (Large window)',
@@ -721,6 +732,7 @@ export default function ( {
 								) }
 								tablet={ () => (
 									<RangeControl
+										__next40pxDefaultSize
 										__nextHasNoMarginBottom
 										label={ __(
 											'# of slides to show (Medium window)',
@@ -746,6 +758,7 @@ export default function ( {
 								) }
 								mobile={ () => (
 									<RangeControl
+										__next40pxDefaultSize
 										__nextHasNoMarginBottom
 										label={ __(
 											'# of slides to show (Small window)',

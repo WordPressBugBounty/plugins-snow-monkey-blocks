@@ -122,7 +122,6 @@ export default function ( {
 	name,
 	attributes,
 	setAttributes,
-	isSelected,
 	className,
 	clientId,
 } ) {
@@ -160,11 +159,9 @@ export default function ( {
 	} = attributes;
 
 	const hasInnerBlocks = useSelect(
-		( select ) => {
-			const { getBlock } = select( blockEditorStore );
-			const block = getBlock( clientId );
-			return !! ( block && block.innerBlocks.length );
-		},
+		( select ) =>
+			!! select( 'core/block-editor' ).getBlock( clientId )?.innerBlocks
+				?.length,
 		[ clientId ]
 	);
 
@@ -184,21 +181,17 @@ export default function ( {
 		setIsShowPlaceholder( ! hasInnerBlocks && ! mediaUrl );
 	}, [ mediaUrl, hasInnerBlocks ] );
 
-	const { imageSizes, image } = useSelect(
-		( select ) => {
-			const { getSettings } = select( blockEditorStore );
-			return {
-				image:
-					mediaId && isSelected
-						? select( 'core' ).getMedia( mediaId, {
-								context: 'view',
-						  } )
-						: null,
-				imageSizes: getSettings()?.imageSizes,
-			};
-		},
+	const imageSizes = useSelect(
+		( select ) => select( 'core/block-editor' ).getSettings()?.imageSizes,
+		[]
+	);
 
-		[ isSelected, mediaId, clientId ]
+	const image = useSelect(
+		( select ) =>
+			mediaId
+				? select( 'core' ).getMedia( mediaId, { context: 'view' } )
+				: null,
+		[ mediaId ]
 	);
 
 	const multipleOriginColorsAndGradients =
@@ -333,6 +326,7 @@ export default function ( {
 					panelId={ clientId }
 				>
 					<UnitControl
+						__next40pxDefaultSize
 						label={ __( 'Maximum width', 'snow-monkey-blocks' ) }
 						value={ maxWidth }
 						onChange={ ( value ) =>
@@ -364,6 +358,7 @@ export default function ( {
 						}
 					>
 						<RangeControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Number of columns in grid',
@@ -397,6 +392,7 @@ export default function ( {
 						}
 					>
 						<RangeControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Number of rows in grid',
@@ -639,6 +635,7 @@ export default function ( {
 										}
 									>
 										<TextControl
+											__next40pxDefaultSize
 											__nextHasNoMarginBottom
 											label={ __(
 												'Aspect ratio',
@@ -678,6 +675,7 @@ export default function ( {
 										}
 									>
 										<RangeControl
+											__next40pxDefaultSize
 											__nextHasNoMarginBottom
 											label={ __(
 												'Grid column: start',
@@ -719,6 +717,7 @@ export default function ( {
 										}
 									>
 										<RangeControl
+											__next40pxDefaultSize
 											__nextHasNoMarginBottom
 											label={ __(
 												'Grid column: end',
@@ -760,6 +759,7 @@ export default function ( {
 										}
 									>
 										<RangeControl
+											__next40pxDefaultSize
 											__nextHasNoMarginBottom
 											label={ __(
 												'Grid row: start',
@@ -801,6 +801,7 @@ export default function ( {
 										}
 									>
 										<RangeControl
+											__next40pxDefaultSize
 											__nextHasNoMarginBottom
 											label={ __(
 												'Grid row: end',
@@ -863,6 +864,7 @@ export default function ( {
 							}
 						>
 							<RangeControl
+								__next40pxDefaultSize
 								__nextHasNoMarginBottom
 								label={ __( 'Opacity', 'snow-monkey-blocks' ) }
 								value={ Number(
@@ -901,6 +903,7 @@ export default function ( {
 						}
 					>
 						<UnitControl
+							__next40pxDefaultSize
 							label={ __(
 								'Maximum width',
 								'snow-monkey-blocks'
@@ -1072,6 +1075,7 @@ export default function ( {
 						}
 					>
 						<RangeControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Grid column: start',
@@ -1105,6 +1109,7 @@ export default function ( {
 						}
 					>
 						<RangeControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Grid column: end',
@@ -1138,6 +1143,7 @@ export default function ( {
 						}
 					>
 						<RangeControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Grid row: start',
@@ -1170,6 +1176,7 @@ export default function ( {
 						}
 					>
 						<RangeControl
+							__next40pxDefaultSize
 							__nextHasNoMarginBottom
 							label={ __(
 								'Grid row: end',
