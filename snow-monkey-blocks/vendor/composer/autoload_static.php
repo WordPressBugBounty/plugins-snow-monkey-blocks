@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit7d522515dd26612f6c12ac6f442f047b
 {
     public static $prefixLengthsPsr4 = array (
-        'S' => 
+        'S' =>
         array (
             'Snow_Monkey\\Plugin\\Blocks\\' => 26,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Snow_Monkey\\Plugin\\Blocks\\' => 
+        'Snow_Monkey\\Plugin\\Blocks\\' =>
         array (
             0 => __DIR__ . '/../..' . '/',
         ),

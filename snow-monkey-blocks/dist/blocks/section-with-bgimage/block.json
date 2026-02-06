@@ -368,9 +368,5 @@
       }
     }
   },
-  "style": [
-    "file:./style-index.css",
-    "snow-monkey-blocks-section-style"
-  ],
   "editorScript": "file:./index.js"
 }

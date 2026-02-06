@@ -2,16 +2,16 @@
 # This file is distributed under the GPL2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Snow Monkey Blocks 23.1.0\n"
+"Project-Id-Version: Snow Monkey Blocks 24.1.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/snow-monkey-blocks\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-22T01:40:30+00:00\n"
+"POT-Creation-Date: 2025-12-05T11:05:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: snow-monkey-blocks\n"
 
 #. Plugin Name of the plugin
@@ -106,17 +106,19 @@ msgstr ""
 msgid "[Deprecated]"
 msgstr ""
 
-#: snow-monkey-blocks.php:128
+#: snow-monkey-blocks.php:189
 msgid "[ PR ] Premium WordPress Theme Snow Monkey"
 msgstr ""
 
 #. translators: %1$s: Start a tag, %2$s: End a tag.
-#: snow-monkey-blocks.php:146
+#: snow-monkey-blocks.php:207
+#, php-format
 msgid "Snow Monkey Blocks is optimized for the %1$sSnow Monkey%2$s theme, but it can also be used with other themes."
 msgstr ""
 
 #. translators: %1$s: Start a tag, %2$s: End a tag.
-#: snow-monkey-blocks.php:152
+#: snow-monkey-blocks.php:213
+#, php-format
 msgid "When used together with the %1$sSnow Monkey%2$s theme, it can be displayed with the most beautiful balance, and it is displayed on the edit screen with the same design as the front screen."
 msgstr ""
 
@@ -164,6 +166,8 @@ msgstr ""
 #: dist/blocks/spider-contents-slider/index.js:1
 #: dist/blocks/spider-pickup-slider/index.js:1
 #: dist/blocks/spider-slider/index.js:1
+#: dist/blocks/step/index.js:1
+#: dist/blocks/step/item/free/index.js:1
 #: dist/blocks/step/item/standard/index.js:1
 #: dist/blocks/tabs/index.js:1
 #: dist/blocks/taxonomy-posts/index.js:1
@@ -355,14 +359,18 @@ msgid "Name"
 msgstr ""
 
 #: dist/blocks/box/index.js:1
-#: dist/blocks/btn-box/index.js:1
-#: dist/blocks/btn/index.js:1
+#: dist/blocks/flex/index.js:1
+#: dist/blocks/section-break-the-grid/index.js:1
+#: dist/blocks/spider-contents-slider/index.js:1
+#: dist/blocks/spider-contents-slider/item/index.js:1
+msgid "Box Shadow"
+msgstr ""
+
+#: dist/blocks/box/index.js:1
 #: dist/blocks/flex/index.js:1
 #: dist/blocks/hero-header/index.js:1
-#: dist/blocks/information/index.js:1
 #: dist/blocks/items/item/banner/index.js:1
 #: dist/blocks/items/item/item/index.js:1
-#: dist/blocks/list/index.js:1
 #: dist/blocks/section-break-the-grid/index.js:1
 #: dist/blocks/section-break-the-grid/index.js:25
 #: dist/blocks/section-side-heading/index.js:1
@@ -371,7 +379,6 @@ msgstr ""
 #: dist/blocks/section/index.js:1
 #: dist/blocks/spider-contents-slider/index.js:1
 #: dist/blocks/spider-contents-slider/item/index.js:1
-#: dist/blocks/step/item/standard/index.js:1
 msgid "Color"
 msgstr ""
 
@@ -451,14 +458,6 @@ msgid "Inset"
 msgstr ""
 
 #: dist/blocks/box/index.js:1
-#: dist/blocks/flex/index.js:1
-#: dist/blocks/section-break-the-grid/index.js:1
-#: dist/blocks/spider-contents-slider/index.js:1
-#: dist/blocks/spider-contents-slider/item/index.js:1
-msgid "Box Shadow"
-msgstr ""
-
-#: dist/blocks/box/index.js:1
 #: dist/blocks/items/item/block-link/index.js:1
 #: dist/blocks/panels/item/block-link/index.js:1
 #: dist/blocks/panels/item/horizontal/index.js:1
@@ -470,6 +469,7 @@ msgstr ""
 #: dist/blocks/btn-box/index.js:1
 #: dist/blocks/btn/index.js:1
 #: dist/blocks/items/item/block-link/index.js:1
+#: dist/blocks/items/item/standard/index.js:1
 #: dist/blocks/pricing-table/item/index.js:1
 #: dist/blocks/read-more-box/index.js:1
 #: dist/blocks/spider-contents-slider/index.js:1
@@ -776,6 +776,7 @@ msgstr ""
 #: dist/blocks/recent-posts/index.js:7
 #: dist/blocks/rss/index.js:4
 #: dist/blocks/taxonomy-posts/index.js:4
+#, js-format
 msgid "Carousel (%1$s)"
 msgstr ""
 
@@ -851,6 +852,8 @@ msgstr ""
 #: dist/blocks/section-with-bgimage/index.js:1
 #: dist/blocks/section-with-bgvideo/index.js:1
 #: dist/blocks/section/index.js:1
+#: dist/blocks/step/item/free/index.js:1
+#: dist/blocks/step/item/standard/index.js:1
 msgid "Title tag"
 msgstr ""
 
@@ -1121,6 +1124,7 @@ msgstr ""
 #. translators: %d: Length
 #: dist/blocks/faq/item/index.js:4
 #: dist/blocks/faq/item/index.js:7
+#, js-format
 msgid "Recommend length up to %d"
 msgstr ""
 
@@ -1853,6 +1857,7 @@ msgstr ""
 
 #. translators: %1$s: Term label
 #: dist/blocks/recent-posts/index.js:4
+#, js-format
 msgid "Filter by %1$s"
 msgstr ""
 
@@ -2372,6 +2377,7 @@ msgstr ""
 #: dist/blocks/section-break-the-grid/index.js:7
 #: dist/blocks/section-break-the-grid/index.js:10
 #: dist/blocks/section-break-the-grid/index.js:13
+#, js-format
 msgid "Move %1$s up"
 msgstr ""
 
@@ -2380,6 +2386,7 @@ msgstr ""
 #: dist/blocks/section-break-the-grid/index.js:19
 #: dist/blocks/section-break-the-grid/index.js:22
 #: dist/blocks/section-break-the-grid/index.js:25
+#, js-format
 msgid "Move %1$s down"
 msgstr ""
 
@@ -2610,6 +2617,11 @@ msgstr ""
 msgid "Display caption"
 msgstr ""
 
+#: dist/blocks/step/index.js:1
+#: dist/blocks/taxonomy-terms/index.js:1
+msgid "Tag"
+msgstr ""
+
 #: dist/blocks/step/item/free/index.js:1
 #: dist/blocks/step/item/standard/index.js:1
 msgid "Number color"
@@ -2695,6 +2707,10 @@ msgstr ""
 msgid "Taxonomy posts"
 msgstr ""
 
+#: dist/blocks/taxonomy-posts/index.js:4
+msgid "Please select a term."
+msgstr ""
+
 #: dist/blocks/taxonomy-terms/index.js:1
 msgid "Categories"
 msgstr ""
@@ -2729,10 +2745,6 @@ msgstr ""
 
 #: dist/blocks/taxonomy-terms/index.js:1
 msgid "Display count"
-msgstr ""
-
-#: dist/blocks/taxonomy-terms/index.js:1
-msgid "Tag"
 msgstr ""
 
 #: dist/blocks/taxonomy-terms/index.js:1

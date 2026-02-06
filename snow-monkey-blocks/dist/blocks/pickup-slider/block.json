@@ -31,6 +31,7 @@
     }
   },
   "style": [
+    "slick-carousel",
     "slick-carousel-theme"
   ],
   "editorScript": "file:./index.js"

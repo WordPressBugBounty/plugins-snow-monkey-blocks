@@ -154,11 +154,6 @@
       }
     }
   },
-  "style": [
-    "file:./style-index.css",
-    "snow-monkey-blocks-section-style",
-    "snow-monkey-blocks-section-with-bgimage-style"
-  ],
   "editorStyle": "file:./index.css",
   "editorScript": "file:./index.js",
   "viewScript": "file:./script.js"

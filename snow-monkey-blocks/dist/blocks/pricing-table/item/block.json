@@ -107,7 +107,10 @@
       "default": ""
     },
     "btnBorderRadius": {
-      "type": "string"
+      "type": [
+        "string",
+        "object"
+      ]
     },
     "btnWrap": {
       "type": "boolean",
