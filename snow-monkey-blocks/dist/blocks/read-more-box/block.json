@@ -90,6 +90,7 @@
         "type": "constrained"
       }
     },
+    "contentRole": true,
     "snowmonkeyeditor": {
       "blockPresets": {
         "ignore": [

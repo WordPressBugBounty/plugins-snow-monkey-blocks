@@ -58,6 +58,8 @@
     "spacing": {
       "margin": true
     },
+    "contentRole": true,
+    "listView": true,
     "snowmonkeyeditor": {
       "blockPresets": {
         "ignore": [

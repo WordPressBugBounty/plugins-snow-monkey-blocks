@@ -21,7 +21,8 @@
       "type": "string",
       "source": "attribute",
       "selector": ".smb-panels__item__action > a",
-      "attribute": "href"
+      "attribute": "href",
+      "role": "content"
     },
     "rel": {
       "type": "string",
@@ -63,7 +64,8 @@
       "default": {
         "type": "constrained"
       }
-    }
+    },
+    "contentRole": true
   },
   "editorScript": "file:./index.js",
   "viewScript": "file:/view.js"

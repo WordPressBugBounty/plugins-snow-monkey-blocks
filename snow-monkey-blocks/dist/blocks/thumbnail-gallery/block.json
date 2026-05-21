@@ -44,7 +44,9 @@
     ],
     "spacing": {
       "margin": true
-    }
+    },
+    "contentRole": true,
+    "listView": true
   },
   "editorScript": "file:./index.js",
   "viewScript": [

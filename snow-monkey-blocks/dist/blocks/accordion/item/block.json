@@ -13,7 +13,8 @@
       "type": "string",
       "source": "html",
       "selector": ".smb-accordion__item__title__label",
-      "default": ""
+      "default": "",
+      "role": "content"
     },
     "initialState": {
       "type": "boolean",
@@ -53,7 +54,8 @@
       "__experimentalSkipSerialization": true,
       "margin": false,
       "padding": true
-    }
+    },
+    "contentRole": true
   },
   "selectors": {
     "spacing": {
