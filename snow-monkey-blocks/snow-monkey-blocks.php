@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin name: Snow Monkey Blocks
- * Version: 25.0.0
+ * Version: 25.0.1
  * Description: Gutenberg blocks collection made by MonkeyWrench.
  * Author: inc2734
  * Author URI: https://2inc.org
@@ -220,6 +220,13 @@ class Bootstrap {
 }
 
 require_once __DIR__ . '/vendor/autoload.php';
+
+/**
+ * Main file path of this plugin.
+ *
+ * @var string
+ */
+define( 'SNOW_MONKEY_BLOCKS_MAIN_FILE_PATH', __FILE__ );
 
 /**
  * Directory url of this plugin.
