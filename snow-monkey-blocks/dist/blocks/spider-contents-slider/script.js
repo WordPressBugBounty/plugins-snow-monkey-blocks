@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded",(()=>{new Spider(".smb-spider-contents-slider")}),!1);
+document.addEventListener("DOMContentLoaded",()=>{new Spider(".smb-spider-contents-slider")},!1);
