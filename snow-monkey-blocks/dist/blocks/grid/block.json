@@ -75,6 +75,12 @@
         "text": true
       }
     },
+    "background": {
+      "gradient": true,
+      "__experimentalDefaultControls": {
+        "gradient": true
+      }
+    },
     "__experimentalBorder": {
       "color": true,
       "radius": true,
