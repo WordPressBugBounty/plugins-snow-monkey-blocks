@@ -1,1 +1,13 @@
-<?php return array('dependencies' => array('lodash', 'react-jsx-runtime', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-compose', 'wp-i18n', 'wp-server-side-render'), 'version' => '669b1cf03b548b406b50');
+<?php return array(
+	'dependencies' => array(
+		'lodash',
+		'react-jsx-runtime',
+		'wp-block-editor',
+		'wp-blocks',
+		'wp-components',
+		'wp-compose',
+		'wp-i18n',
+		'wp-server-side-render'
+	),
+	'version' => '4aeea36909a328aeb8ad'
+);
